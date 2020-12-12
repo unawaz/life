@@ -17,19 +17,27 @@
      <canvas id='battle-ship-canvas' width="640" height="489"></canvas>
      
     <script>
-     document.getElementById("battle-ship").innerHTML = "js added";
+     const scene = new THREE.Scene();
+     const camera = new THREE.PerspectiveCamera(
+      75.0,window.innerWidth / window.innerHeight, 0.1, 1000
+     );
+     const renderer = new THREE.WebGLRenderer();
+     renderer.setSize(window.innherWidth,window.innherHeight);
+     document.body.appendChild(renderer.domElement);
      
-     function main() {
-       const canvas = document.querySelector("#battle-ship-canvas");
-        const gl = canvas.getContext("webgl");
-      if (gl == null) {
-         alert("unable to initialize webgl.");
-         return;
-      }
-        gl.clearColor(0.0,0.0,0.0,1.0);
-        gl.clear(gl.COLOR_BUFFER_BIT);
+     const geomertry = new THREE.BoxGeometry();
+     const material = new THREE.MeshBasicMaterial(
+      {color:0x09ff99});
+     const cube = new THREE.Mesh(geometry,material);
+     scene.add(cube);
+     
+     camera.position.z = 5;
+     
+     function animate() {
+       requestAnimationFrame(animate);
+       renderer.render(scene.camera);
      }
-     window.onload = main;
+     animate();
     </script>
    
     

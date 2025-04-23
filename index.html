@@ -3,53 +3,8 @@
  </head>
   <body>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
    
-  <h1>Umar Nawaz : Life</h2>
-
-    <h2>Cargo Trailer</h2>
-    
-    <h2>3D Printer</h2>
-    
-    <h2>ONET</h2>
-    
-    <h2>Battle Ship</h2>
-   <div id="battle-ship">
-    </div>
-  
-     <canvas id='battle-ship-canvas' width="640" height="489"></canvas>
-     
-    <script>
-     const scene = new THREE.Scene();
-     const camera = new THREE.PerspectiveCamera(
-      75, window.innerWidth / window.innerHeight, 
-      0.1, 1000
-     );
-     const renderer = new THREE.WebGLRenderer();
-     renderer.setSize(window.innerWidth,window.innerHeight);
-     document.body.appendChild(renderer.domElement);
-     
-     const geometry = new THREE.BoxGeometry();
-     const material = new THREE.MeshBasicMaterial(
-      {color:0x09ff99});
-     const cube = new THREE.Mesh(geometry,material);
-     scene.add(cube);
-     
-     camera.position.z = 5;
-     
-     function animate() {
-       requestAnimationFrame(animate);
-       renderer.render(scene.camera);
-     }
-     animate();
-    </script>
-   
-    
-    <h2>Pacman</h2>
-    
-    <h2>AI</h2>
-    
-    <h2>Project Euler</h2>
+  <h1>Umar Nawaz</h1>
 
   </body>
 </html>
